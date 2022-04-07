@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding!!.root)
         getIniBalance()
         setBalance()
+       // viewModel.setBalanceExtract()
+       // viewModel.setBalanceExtract()
+        var items = viewModel.getBalance()
+        items
     }
     //Pega valores iniciais de saldo
     fun getIniBalance(){
