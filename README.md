@@ -14,6 +14,8 @@ viewmodel - aramazenando e gerenciando dados para ui
 
 - Bibliotecas
 retrofit2, okhttp - requisiçoes online http
+
 gson - configuracoes em json
+
 security-crypto-ktx - trabalhar com SecurityPreference
 
