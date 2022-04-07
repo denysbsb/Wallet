@@ -1,10 +1,11 @@
-package com.example.wallet
+package com.example.wallet.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.wallet.databinding.ActivityMainBinding
+import com.example.wallet.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

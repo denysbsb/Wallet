@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     style="@style/Container"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <TextView
         style="@style/Title"
@@ -40,6 +40,7 @@
         android:text="0" />
 
     <Button
+        android:id="@+id/extract"
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

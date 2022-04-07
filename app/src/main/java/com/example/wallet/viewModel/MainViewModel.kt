@@ -1,8 +1,11 @@
-package com.example.wallet
+package com.example.wallet.viewModel
 
-import SharedPreferences
+import com.example.wallet.util.SharedPreferences
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import com.example.wallet.data.BcbService
+import com.example.wallet.data.entity.ItemExtract
+import com.example.wallet.data.MercadoBitcoinService
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.Retrofit
