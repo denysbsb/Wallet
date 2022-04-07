@@ -24,3 +24,4 @@ gson - configurações em json
 
 security-crypto-ktx - trabalhar com SecurityPreference
 
+- Layout em LinearLayout
