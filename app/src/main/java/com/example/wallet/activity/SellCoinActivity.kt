@@ -29,8 +29,8 @@ class SellCoinActivity : AppCompatActivity() {
             saveValue()
             finish()
         }
-
     }
+    
     fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
             val checked = view.isChecked
@@ -46,6 +46,7 @@ class SellCoinActivity : AppCompatActivity() {
             }
         }
     }
+    
     fun onRadioButtonClickedItem(view: View) {
         if (view is RadioButton) {
             val checked = view.isChecked
