@@ -18,30 +18,24 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             .apply()
     }
     fun getBalance(coin: String): Int {
-        return encryptedPreferences.getInt(coin, 0)
-        var list = arrayListOf<Int?>()
+        var value = encryptedPreferences.getInt(coin, 0)
+        var list = getArrayList(coin+"_EXTRACT")
+        list?.forEach { it ->
+                    value = value - it!!
+        }
+        return value
     }
-    fun saveBalanceExtract(coin: String, value: Int) {
-        var list = getArrayList(coin)
-        list?.add(value)
-        saveArrayList(list, coin)
-    }
+
     fun getBalance(): ArrayList<Int?>? {
         return getArrayList("BITCOIN_EXTRACT")
     }
-    fun saveArrayList(list: ArrayList<Int?>?, key: String?) {
-        val editor =  encryptedPreferences.edit()
-        val gson = Gson()
-        val json: String = gson.toJson(list)
-        editor.putString(key, json)
-        editor.apply()
-    }
+
 
     fun getArrayList(key: String?): ArrayList<Int?>? {
         val prefs = encryptedPreferences
         val gson = Gson()
         val json: String? = prefs.getString(key, null)
-        val type: Type = object : TypeToken<ArrayList<String?>?>() {}.getType()
+        val type: Type = object : TypeToken<ArrayList<Int?>?>() {}.getType()
         return gson.fromJson(json, type)
     }
 }

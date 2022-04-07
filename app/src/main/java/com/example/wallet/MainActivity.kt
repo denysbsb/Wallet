@@ -1,5 +1,6 @@
 package com.example.wallet
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,12 +17,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding!!.root)
         getIniBalance()
         setBalance()
+        setClicks()
        // viewModel.setBalanceExtract()
        // viewModel.setBalanceExtract()
         var items = viewModel.getBalance()
+
         items
     }
-    //Pega valores iniciais de saldo
+
+    fun setClicks(){
+        binding.sell.setOnClickListener {
+            val intent = Intent(this, SellCoinActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setBalance()
+    }
+
     fun getIniBalance(){
         viewModel.setBalance("BITCOIN",50000)
         viewModel.setBalance("BRITAS",100)
