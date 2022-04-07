@@ -11,7 +11,6 @@ import com.google.gson.reflect.TypeToken
 import retrofit2.Retrofit
 import java.lang.reflect.Type
 
-
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val encryptedPreferences = SharedPreferences.create(application)
     fun setBalance(coin: String, value: Int){
@@ -45,7 +44,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     //Chama api bcb pegar dolar
     fun getDolarDay(){
-
         val retrofit = Retrofit.Builder()
             .baseUrl("https://olinda.bcb.gov.br/")
             .build()
