@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
     <style name="Container">
         <item name="android:layout_margin">20dp</item>
     </style>
     <style name="Title">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">26sp</item>
+        <item name="android:textSize">29sp</item>
         <item name="android:layout_marginBottom">12sp</item>
     </style>
     <style name="SubTitle">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">19sp</item>
         <item name="android:layout_marginBottom">6sp</item>
     </style>
     <style name="ButtonPrimary">
+        <item name="android:textColor">@color/white</item>
         <item name="android:background">@color/green</item>
         <item name="android:textSize">15sp</item>
         <item name="android:layout_marginTop">12sp</item>
