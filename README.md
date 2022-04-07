@@ -2,15 +2,15 @@
 
 - Os arquivos estão segregados por responsabilidades nos packages:
 
-activitys - atividades e conteudos a serem exibidos na tela
+activitys - atividades e conteúdos a serem exibidos na tela
 
-adapters - ponte para listViews e dados necessarios para visualização
+adapters - ponte para listViews e dados necessários para visualização
 
 data - arquivos requisição online/offline e entidades
 
-util - metodos para ser usados como complem
+util - metodos para ser usados como complemento	
 
-viewmodel - aramazenando e gerenciando dados para ui
+viewmodel - armazenando e gerenciando dados para ui
 
 - Dados offline são armazenados em SecurityPreferences com (titulo, array)
 
@@ -18,9 +18,9 @@ viewmodel - aramazenando e gerenciando dados para ui
 
 - Bibliotecas
 
-retrofit2, okhttp - requisiçoes online http
+retrofit2, okhttp - requisições online http
 
-gson - configuracoes em json
+gson - configurações em json
 
 security-crypto-ktx - trabalhar com SecurityPreference
 
