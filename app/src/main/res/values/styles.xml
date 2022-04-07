@@ -3,7 +3,7 @@
     <style name="AppThemeLight" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
     <style name="Container">
-        <item name="android:layout_margin">20dp</item>
+        <item name="android:padding">20dp</item>
     </style>
     <style name="Title">
         <item name="android:textColor">@color/black</item>
