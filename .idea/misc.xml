@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/aluga.com/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/aluga.com/Projetos/Wallet/app/src/main/res/layout/activity_extract.xml" value="0.1" />
         <entry key="..\:/Users/aluga.com/Projetos/Wallet/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/aluga.com/Projetos/Wallet/app/src/main/res/layout/activity_sell_coin.xml" value="0.18" />
+        <entry key="..\:/Users/aluga.com/Projetos/Wallet/app/src/main/res/layout/item_extract.xml" value="0.15" />
       </map>
     </option>
   </component>

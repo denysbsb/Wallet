@@ -2,4 +2,8 @@
     <string name="app_name">Wallet</string>
     <string name="extract_operations">Extrato de operações financeiras</string>
     <string name="sell_exchange">+ Vender/Trocar moeda</string>
+    <string name="compra">Compra</string>
+    <string name="venda">Venda</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="britas">Britas</string>
 </resources>

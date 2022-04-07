@@ -43,6 +43,15 @@ dependencies {
     implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
     // Json Library
     implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
+    // Retrofit
+    def retrofitVersion = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    // OkHttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.7'
+    implementation 'com.localebro:okhttpprofiler:1.0.8'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
