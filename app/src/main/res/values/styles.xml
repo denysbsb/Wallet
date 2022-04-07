@@ -13,4 +13,9 @@
         <item name="android:textSize">15sp</item>
         <item name="android:layout_marginBottom">6sp</item>
     </style>
+    <style name="ButtonPrimary">
+        <item name="android:background">@color/green</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginTop">12sp</item>
+    </style>
 </resources>

@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
     <Button
+        style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Extrato "
+        android:text="@string/extract_operations"/>
 </LinearLayout>
