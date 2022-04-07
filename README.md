@@ -13,6 +13,7 @@ viewmodel - aramazenando e gerenciando dados para ui
 - Arquitetura MVVM
 
 - Bibliotecas
+
 retrofit2, okhttp - requisiçoes online http
 
 gson - configuracoes em json
