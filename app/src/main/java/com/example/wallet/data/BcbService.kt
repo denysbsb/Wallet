@@ -1,5 +1,6 @@
-package com.example.wallet
+package com.example.wallet.data
 
+import com.example.wallet.BcbDatas
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
