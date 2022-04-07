@@ -1,11 +1,13 @@
-package com.example.wallet
+package com.example.wallet.activity
 
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.wallet.R
 import com.example.wallet.databinding.ActivitySellCoinBinding
+import com.example.wallet.viewModel.SellCoinViewModel
 
 class SellCoinActivity : AppCompatActivity() {
     private lateinit var viewModel: SellCoinViewModel

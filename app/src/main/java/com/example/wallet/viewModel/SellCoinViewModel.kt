@@ -1,11 +1,13 @@
-package com.example.wallet
+package com.example.wallet.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import com.example.wallet.data.entity.ItemExtract
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
 import java.util.ArrayList
+import com.example.wallet.util.SharedPreferences
 
 class SellCoinViewModel(application: Application) : AndroidViewModel(application) {
     private val encryptedPreferences = SharedPreferences.create(application)

@@ -6,12 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SellCoinActivity">
+    tools:context=".activity.SellCoinActivity">
     <Button
         android:id="@+id/voltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Voltar"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_bitcoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bitcoin"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_britas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/britas"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
     <TextView
         style="@style/SubTitle"
         android:layout_width="wrap_content"
@@ -23,6 +41,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="10"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_compra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compra"
+            android:checked="true"
+            android:onClick="onRadioButtonClickedItem"/>
+        <RadioButton android:id="@+id/radio_venda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/venda"
+            android:onClick="onRadioButtonClickedItem"/>
+    </RadioGroup>
     <Button
         style="@style/ButtonPrimary"
         android:id="@+id/executar"
