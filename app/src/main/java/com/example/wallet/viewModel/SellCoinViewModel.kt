@@ -9,23 +9,32 @@ import java.util.ArrayList
 
 class SellCoinViewModel(application: Application) : AndroidViewModel(application) {
     private val encryptedPreferences = SharedPreferences.create(application)
-    fun saveBalanceExtract(coin: String, value: Int) {
-        var list = getArrayList(coin)
-        list?.add(value)
+
+    //salva extrato offline (valor, moeda, tipo)
+    fun saveBalanceExtract(coin: String?, value: Int, type: String) {
+        var list: ArrayList<ItemExtract?> = ArrayList()
+        if(getArrayList(coin) != null){
+            list = getArrayList(coin)!!
+        }
+        list?.add(ItemExtract(value,coin!!,type))
         saveArrayList(list, coin)
     }
-    fun saveArrayList(list: ArrayList<Int?>?, key: String?) {
+
+    //salva o array offline em json
+    fun saveArrayList(list: ArrayList<ItemExtract?>?, key: String?) {
         val editor =  encryptedPreferences.edit()
         val gson = Gson()
         val json: String = gson.toJson(list)
         editor.putString(key, json)
         editor.apply()
     }
-    fun getArrayList(key: String?): ArrayList<Int?>? {
+
+    //pega dados de extrato offline
+    fun getArrayList(key: String?): ArrayList<ItemExtract?>? {
         val prefs = encryptedPreferences
         val gson = Gson()
         val json: String? = prefs.getString(key, null)
-        val type: Type = object : TypeToken<ArrayList<String?>?>() {}.getType()
+        val type: Type = object : TypeToken<ArrayList<ItemExtract?>?>() {}.getType()
         return gson.fromJson(json, type)
     }
 }

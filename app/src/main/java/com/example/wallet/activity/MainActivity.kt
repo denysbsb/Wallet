@@ -1,7 +1,6 @@
 package com.example.wallet
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -18,14 +17,13 @@ class MainActivity : AppCompatActivity() {
         getIniBalance()
         setBalance()
         setClicks()
-       // viewModel.setBalanceExtract()
-       // viewModel.setBalanceExtract()
-        var items = viewModel.getBalance()
-
-        items
     }
 
     fun setClicks(){
+        binding.extract.setOnClickListener {
+            val intent = Intent(this, ExtractActivity::class.java)
+            startActivity(intent)
+        }
         binding.sell.setOnClickListener {
             val intent = Intent(this, SellCoinActivity::class.java)
             startActivity(intent)
@@ -37,9 +35,12 @@ class MainActivity : AppCompatActivity() {
         setBalance()
     }
 
+    //TODO ainda nao chamando api bitcoin e dolar direito
     fun getIniBalance(){
-        viewModel.setBalance("BITCOIN",50000)
-        viewModel.setBalance("BRITAS",100)
+        viewModel.setBalance("BITCOIN",4)
+        viewModel.getBitcoinDay()
+        viewModel.setBalance("BRITAS",21321)
+        viewModel.getDolarDay()
     }
     fun setBalance(){
         binding.balanceBitcoin.text = viewModel.getBalance("BITCOIN").toString()
