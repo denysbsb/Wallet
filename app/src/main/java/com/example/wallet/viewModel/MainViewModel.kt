@@ -6,40 +6,28 @@ import androidx.lifecycle.AndroidViewModel
 import com.example.wallet.data.BcbService
 import com.example.wallet.data.entity.ItemExtract
 import com.example.wallet.data.MercadoBitcoinService
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.example.wallet.data.SecurityPreferencesService
 import retrofit2.Retrofit
-import java.lang.reflect.Type
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    private val encryptedPreferences = SharedPreferences.create(application)
+    private val encryptedPreferences = SecurityPreferencesService(application)
+
     fun setBalance(coin: String, value: Int){
-        encryptedPreferences.edit()
-            .putInt(coin, value)
-            .apply()
+        encryptedPreferences.setKeyValue(coin,value)
     }
 
     //pega saldo subtraindo ou somando extrato
     fun getBalance(coin: String): Int {
         var value = encryptedPreferences.getInt(coin, 0)
-        var list = getArrayList(coin+"_EXTRACT")
+        var list = encryptedPreferences.getArrayList(coin+"_EXTRACT")
         list?.forEach { it ->
             if(it!!.operation == "compra"){
-                value = value + it!!.value
+                value = value.plus(it!!.value)
             } else {
-                value = value - it!!.value
+                value = value.minus(it!!.value)
             }
         }
         return value
-    }
-
-    //pega dados extrato gravados offline
-    fun getArrayList(key: String?): ArrayList<ItemExtract?>? {
-        val prefs = encryptedPreferences
-        val gson = Gson()
-        val json: String? = prefs.getString(key, null)
-        val type: Type = object : TypeToken<ArrayList<ItemExtract?>?>() {}.getType()
-        return gson.fromJson(json, type)
     }
 
     //Chama api bcb pegar dolar
