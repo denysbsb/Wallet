@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.setBalance("BRITAS",21321)
         viewModel.getDolarDay()
     }
+    
     fun setBalance(){
         binding.balanceBitcoin.text = viewModel.getBalance("BITCOIN").toString()
         binding.balanceBritas.text = viewModel.getBalance("BRITAS").toString()

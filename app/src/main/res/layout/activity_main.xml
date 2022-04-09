@@ -8,49 +8,41 @@
     style="@style/Container"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
-
     <TextView
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Saldo Discriminado" />
-
     <TextView
         style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bitcoin:" />
-
     <TextView
         android:id="@+id/balanceBitcoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0" />
-
     <TextView
         style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Britas:" />
-
     <TextView
         android:id="@+id/balanceBritas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0" />
-
     <Button
         android:id="@+id/extract"
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/extract_operations"/>
-
     <Button
         android:id="@+id/sell"
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sell_exchange"/>
-
 </LinearLayout>
