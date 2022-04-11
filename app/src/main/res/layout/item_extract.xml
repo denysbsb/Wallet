@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:text="Denys"
-    android:textSize="20dp"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/valor"
-    android:textColor="@color/black"
-    tools:ignore="MissingConstraints" />
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="element_text"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="element_text"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="element_text"/>
+
 </LinearLayout>

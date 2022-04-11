@@ -20,6 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <TextView
         android:textColor="@color/black"
         android:text="Britas"
@@ -31,6 +36,11 @@
         style="@style/SubTitle"
         android:text="Britas"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewBritas"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <TextView

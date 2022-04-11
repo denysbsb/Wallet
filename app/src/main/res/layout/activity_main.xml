@@ -8,6 +8,7 @@
     style="@style/Container"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
+
     <TextView
         style="@style/Title"
         android:layout_width="wrap_content"

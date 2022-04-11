@@ -4,7 +4,7 @@ import com.example.wallet.util.SharedPreferences
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.example.wallet.data.BcbService
-import com.example.wallet.data.entity.ItemExtract
+import com.example.wallet.data.entity.ItemExtractData
 import com.example.wallet.data.MercadoBitcoinService
 import com.example.wallet.data.SecurityPreferencesService
 import retrofit2.Retrofit
@@ -21,6 +21,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         var value = encryptedPreferences.getInt(coin, 0)
         var list = encryptedPreferences.getArrayList(coin+"_EXTRACT")
         list?.forEach { it ->
+
             if(it!!.operation == "compra"){
                 value = value.plus(it!!.value)
             } else {

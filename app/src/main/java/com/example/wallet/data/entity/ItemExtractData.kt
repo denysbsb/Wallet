@@ -1,6 +1,6 @@
 package com.example.wallet.data.entity
 
-data class ItemExtract(
+data class ItemExtractData(
     var value: Int,
     var type: String,
     var operation: String)

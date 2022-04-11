@@ -6,32 +6,42 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wallet.R
+import com.example.wallet.activity.ExtractActivity
+import com.example.wallet.activity.MainActivity
+import com.example.wallet.data.entity.ItemExtractData
 import java.util.ArrayList
 
-//Opcao para adapter e recyclerview
-class ExtractAdapter(private val mContacts: ArrayList<Int?>?) : RecyclerView.Adapter<ExtractAdapter.ViewHolder>()
-{
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTextView = itemView.findViewById<TextView>(R.id.valor)
+//Opcao para adapter e recyclerview extrato
+class ExtractAdapter(private val dataSet: ArrayList<ItemExtractData?>?, mainActivity: ExtractActivity) :
+    RecyclerView.Adapter<ExtractAdapter.ViewHolder>() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val txOperetion: TextView
+        val txType: TextView
+        val txValue: TextView
+        init {
+            txOperetion = view.findViewById(R.id.operation)
+            txType = view.findViewById(R.id.type)
+            txValue = view.findViewById(R.id.value)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val context = parent.context
-        val inflater = LayoutInflater.from(context)
-        val contactView = inflater.inflate(R.layout.item_extract, parent, false)
-        return ViewHolder(contactView)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.item_extract, viewGroup, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val contact: Int? = mContacts?.get(position)
-        val textView = viewHolder.nameTextView
-        if (contact != null) {
-            textView.setText(contact)
+        if(dataSet != null) {
+            var signal = "+"
+            if(dataSet[position]!!.operation != "compra"){ signal = "-" }
+            viewHolder.txOperetion.text = signal
+            viewHolder.txType.text = dataSet[position]!!.type
+            viewHolder.txValue.text = dataSet[position]!!.value.toString()
         }
-
     }
 
-    override fun getItemCount(): Int {
-        return mContacts?.size ?: 0
-    }
+    override fun getItemCount() = dataSet!!.size
+
 }
