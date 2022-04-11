@@ -16,6 +16,8 @@ viewmodel - armazenando e gerenciando dados para ui
 
 - Arquitetura MVVM
 
+- S.O.L.I.D
+
 - Bibliotecas
 
 retrofit2, okhttp - requisições online http
