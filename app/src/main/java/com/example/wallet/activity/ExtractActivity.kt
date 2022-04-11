@@ -13,42 +13,39 @@ import java.util.ArrayList
 class ExtractActivity : AppCompatActivity() {
     private lateinit var viewModel: ExtractViewModel
     private lateinit var binding: ActivityExtractBinding
-    var extractList = ArrayList<ItemExtractData>()
     var listAdapter: ExtractAdapter? = null
     var listAdapterBritas: ExtractAdapter? = null
-    var linearLayoutManager: LinearLayoutManager? = null
-    var linearLayoutManagerBritas: LinearLayoutManager? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ExtractViewModel::class.java)
         binding = ActivityExtractBinding.inflate(layoutInflater)
         binding.voltar.setOnClickListener { finish() }
-
         setContentView(binding!!.root)
     }
 
     override fun onResume() {
         super.onResume()
-        extractList.add(ItemExtractData(12,"denys", "fontenele"))
         initView()
     }
 
     private fun initView(){
-        //Pega extrato em preferences se tiver Bitcoin
-        var list = viewModel.getArrayList("BITCOIN_EXTRACT")
-        listAdapter = ExtractAdapter(list, this)
-        linearLayoutManager = LinearLayoutManager(this)
-        linearLayoutManagerBritas = LinearLayoutManager(this)
-
-        binding.recyclerview.layoutManager = linearLayoutManager
+        //Extrato em preferences se tiver Bitcoin
+        listAdapter = ExtractAdapter(getExtract("BITCOIN_EXTRACT"), this)
+        binding.recyclerview.layoutManager = getLinear()
         binding.recyclerview.adapter = listAdapter
 
-        //Pega extrato em preferences se tiver Britas
-        var listBritas = viewModel.getArrayList("BRITAS_EXTRACT")
-        listAdapterBritas = ExtractAdapter(listBritas, this)
-        binding.recyclerviewBritas.layoutManager = linearLayoutManagerBritas
+        //Extrato em preferences se tiver Britas
+        listAdapterBritas = ExtractAdapter(getExtract("BRITAS_EXTRACT"), this)
+        binding.recyclerviewBritas.layoutManager = getLinear()
         binding.recyclerviewBritas.adapter = listAdapterBritas
+    }
+
+    fun getExtract(coin: String): ArrayList<ItemExtractData?>? {
+        return viewModel.getArrayList(coin)
+    }
+
+    fun getLinear(): LinearLayoutManager {
+        return LinearLayoutManager(this)
     }
 }
